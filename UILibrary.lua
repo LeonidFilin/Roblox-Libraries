@@ -38,4 +38,12 @@ function UILibrary.slideGradient(gradient, time, color1, color2, color3) -- 1st 
     gradientAnim:Play()
 end
 
+-- popUp anim:
+function UILibrary.popUp(guiElement, time, scale)
+    local tweenInfo = TweenInfo.new(time, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut,  0, true)
+    goalSize = UDim2.new(scale, 0, scale, 0)
+    local anim = TweenService:Create(guiElement, tweenInfo, {Size = guiElement.Size + goalSize})
+    anim:Play()
+end
+
 return UILibrary
